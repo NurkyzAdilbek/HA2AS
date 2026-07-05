@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Mein Kochbuch</title>
+    <style>
+        body { font-family: sans-serif; max-width: 700px; margin: 40px auto; padding: 0 20px; }
+        .rezept { border: 1px solid #ddd; border-radius: 10px; padding: 20px; margin-bottom: 24px; }
+        .rezept img { width: 100%; max-height: 250px; object-fit: cover; border-radius: 8px; }
+        button { padding: 8px 16px; cursor: pointer; margin-top: 12px; }
+    </style>
+</head>
+<body>
+<h1>Mein Kochbuch</h1>
+<p>Ein paar Rezepte von meinem Kochbuch</p>
+<div class="rezept">
+<img src="https://www.gutekueche.at/storage/media/recipe/134629/spaghetti-al-pomodoro.jpg"alt="Pasta al Pomodor">
+<h2>Pasta al Pomodoro</h2>
+<p>Spagetti mit einer einfachen Tomatensauce aus frischen Tomaten, Knoblauch und Basilikum </p>
+<button onclick="anzeigen('zutaten1',this)">Zutaten anzeigen</button>
+<ul id="zutaten1" style="display: none">
+   <li>Spagetti</li>
+    <li>Tomaten</li>
+    <li>Knoblauch</li>
+    <li>Basilikum</li>
+    <li>Salz</li>
+    <li>Ol</li>
+    </ul>
+</div>
+
+
+<div class="rezept">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmgvhUuzedr0JSa6TFFpibf5trjfcRxnto5njx0yWNJA&s=10"alt="Tiramisu">
+    <h2>Tiramisu</h2>
+    <p>Lecker Tiramisu aus Löffelbiskuit, Kaffe und Mascorpone </p>
+    <button onclick="anzeigen('zutaten2',this)">Zutaten anzeigen</button>
+    <ul id="zutaten2" style="display: none">
+       <li> Mascorpone</li>
+        <li>Löffelbiskuits</li>
+        <li>Kakao</li>
+        <li>Zucker</li>
+        <li>Eier</li>
+    </ul>
+</div>
+
+
+<div class="rezept">
+   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAJrewnPbLpxx2-o6D_alMCFt-b1m1c0KZobhqgTgi-w&s=10" alt="Zitronenlimonade">
+    <h2>Zitronenlimonade</h2>
+    <p> Selbsgemachte Limonade aus frischen Zitronen, etwas Zucker und Sprudelwasser</p>
+    <button onclick="anzeigen('zutaten3',this)">Zutaten anzeigen</button>
+    <ul id="zutaten3" style="display: none">
+        <li> Zitronen</li>
+        <li>Zucker</li>
+        <li>Sprudelwasser</li>
+        <li>Eiswurfel</li>
+
+    </ul>
+</div>
+<script>
+    function anzeigen(id,button){
+        const  zutatenElement=document.getElementById(id);
+        if (zutatenElement.style.display=="none"){
+            zutatenElement.style.display="block";
+            button.textContent="Zutaten verstecken";
+        }
+        else{
+            zutatenElement.style.display="none";
+            button.textContent="Zutaten anzeigen"
+
+    }
+    }
+</script>
+</body>
+</html>
