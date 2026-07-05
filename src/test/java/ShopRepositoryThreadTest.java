@@ -21,7 +21,6 @@ public class ShopRepositoryThreadTest {
                 .setStock(5).build();
         repo.createProduct(newProductRequest);
         String pID="0";
-
         int threads=12;
         ExecutorService executorService= Executors.newFixedThreadPool(threads);
         CountDownLatch countDownLatch=new CountDownLatch(threads);
@@ -49,7 +48,7 @@ public class ShopRepositoryThreadTest {
         ProductOuterClass.Product finalProduct=repo.getProduct(pID);
         assertEquals(5,successCount.get(),"Es sollten nur 5 Kaufe erfolgen");
         assertEquals(7, errorCount.get(),"es sollten 7 fehschlagen werden");
-  assertEquals(0,finalProduct.getStock(),"Lagerbestand sollte 0 sein");
+        assertEquals(0,finalProduct.getStock(),"Lagerbestand sollte 0 sein");
     }
 
 }

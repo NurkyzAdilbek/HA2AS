@@ -4,10 +4,12 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class ShopRepository {
-    private final ConcurrentHashMap<String,ProductOuterClass.Product> products = new ConcurrentHashMap<>();
+    private final ConcurrentHashMap<String,
+            ProductOuterClass.Product> products = new ConcurrentHashMap<>();
     private final AtomicInteger id = new AtomicInteger(0);
     private long verkaufteEinheit=0;
     private double gesamtUmsatz=0.0;
+
     public synchronized ProductOuterClass.ProductResponse createProduct(ProductOuterClass.NewProductRequest request){
         String newId=String.valueOf(id.getAndIncrement());
         ProductOuterClass.Product newProduct=ProductOuterClass.Product.newBuilder().
